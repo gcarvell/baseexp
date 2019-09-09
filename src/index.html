@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  	<title>Vue 101</title>
+</head>
+
+<body>
+	<div id="app">
+		<state-button></state-button>
+		<p>Current state is {{ state }}</p>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script>
+		Vue.component('state-button', {
+			template:`<button @click="clickHandler">Next state</button>`,
+			methods: {
+				clickHandler() {
+					app.state += 1;
+				}
+			}
+		})
+		const app = new Vue({
+		el: '#app',
+		data: {
+			state: 0
+			
+		}
+		});
+	</script>
+</body>
+
+</html>
